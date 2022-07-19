@@ -9,15 +9,6 @@ class Ngspicex2 < Formula
     regex(%r{url=.*?/ngspice[._-]v?(\d+(?:\.\d+)*)\.t}i)
   end
 
-  head do
-    url "https://git.code.sf.net/p/ngspice/ngspice.git", branch: "master"
-
-    depends_on "autoconf" => :build
-    depends_on "automake" => :build
-    depends_on "bison" => :build
-    depends_on "libtool" => :build
-  end
-
   depends_on "autoconf" => :build
   depends_on "automake" => :build
   depends_on "bison" => :build
@@ -33,14 +24,10 @@ class Ngspicex2 < Formula
       --prefix=#{prefix}
       --with-readline=yes
       --enable-xspice
-      --disable-debug
-      --enable-cider
-      --enable-openmp
-      --enable-pss
     ]
 
     system "./configure", *args
-    system "make", "install"
+    system "make -j4", "install"
 
     rm_rf Dir[lib/"ngspice"]
   end
