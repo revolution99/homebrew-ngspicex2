@@ -17,7 +17,7 @@ class Ngspicex2 < Formula
     sha256 catalina:       "f67eb8cb4eddb299a848a22e2507cf3fdb775b17f15dd1c5451186fc1387ab4c"
     sha256 x86_64_linux:   "27e1a76a94f39071ef949f848ed17d7a59b3a0db7c2d444f846b5f1e85e0ce2c"
   end
- 
+
   head do
     url "https://git.code.sf.net/p/ngspice/ngspice.git", branch: "master"
 
@@ -46,7 +46,7 @@ class Ngspicex2 < Formula
 
     system "./configure", *args
     system "make", "install"
- 
+
     rm_rf Dir[lib/"ngspice"]
   end
 
