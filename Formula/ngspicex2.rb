@@ -9,7 +9,6 @@ class Ngspicex2 < Formula
     regex(%r{url=.*?/ngspice[._-]v?(\d+(?:\.\d+)*)\.t}i)
   end
 
-
   head do
     url "https://git.code.sf.net/p/ngspice/ngspice.git", branch: "master"
 
